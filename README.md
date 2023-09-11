@@ -6,3 +6,6 @@ Open browser -
 http://127.0.0.1:8080
 
 put all html files under template/ folder
+
+
+Use crud_app.py for streamlit instead of flask
