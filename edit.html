@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Terminal</title>
+</head>
+<body>
+    <h1>Edit Terminal</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        {{ form.terminal.label }} {{ form.terminal(size=20) }}<br>
+        {{ form.status.label }} {{ form.status(size=20) }}<br>
+        {{ form.satellite.label }} {{ form.satellite(size=20) }}<br>
+        {{ form.state.label }} {{ form.state(size=20) }}<br>
+        {{ form.city.label }} {{ form.city(size=20) }}<br>
+        {{ form.address.label }} {{ form.address(size=20) }}<br>
+        {{ form.zip_code.label }} {{ form.zip_code(size=20) }}<br>
+        {{ form.regional_manager.label }} {{ form.regional_manager(size=20) }}<br>
+        {{ form.terminal_manager.label }} {{ form.terminal_manager(size=20) }}<br>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>
+

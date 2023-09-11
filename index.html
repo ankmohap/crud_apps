@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Terminal Management</title>
+</head>
+<body>
+    <h1>Terminal List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Terminal</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for terminal in terminals %}
+            <tr>
+                <td>{{ terminal.id }}</td>
+                <td>{{ terminal.terminal }}</td>
+                <td>{{ terminal.status }}</td>
+                <td>
+                    <a href="{{ url_for('edit_terminal', id=terminal.id) }}">Edit</a>
+                    <form method="POST" action="{{ url_for('delete_terminal', id=terminal.id) }}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('create_terminal') }}">Create New Terminal</a>
+</body>
+</html>
+
